@@ -1,0 +1,19 @@
+Country,continent_name,wage_span,median_salary,average_salary,lowest_salary,highest_salary
+Afghanistan,Asia,Monthly,853.74,1001.15,252.53,4460.97
+Burkina Faso,Africa,Monthly,485.02,534.97,135.03,2384.83
+Burundi,Africa,Monthly,384.78,420.08,105.55,1863.89
+Cameroon,Africa,Monthly,633.27,744.45,186.92,3303.31
+Central African Republic,Africa,Monthly,621.99,699.33,175.64,3109.94
+Chad,Africa,Monthly,707.39,787.96,198.2,3512.79
+Guinea-Bissau,Africa,Monthly,475.35,551.09,139.06,2449.28
+Haiti,Caribbean,Monthly,444.95,506.2,127.66,2250.59
+Iraq,Asia,Monthly,1382.38,1573.31,395.62,6988.25
+Lebanon,Asia,Monthly,753.33,873.33,219.33,3873.33
+Liberia,Africa,Monthly,334.39,380.35,96.14,1690.44
+Mali,Africa,Monthly,478.58,533.36,134.55,2368.71
+Mozambique,Africa,Monthly,549.81,631.27,159.77,2803.88
+Myanmar,Asia,Monthly,228.46,260.35,65.68,1156.59
+Niger,Africa,Monthly,480.19,547.87,137.93,2433.17
+Nigeria,Africa,Monthly,389.85,438.91,110.63,1949.27
+Somalia,Africa,Monthly,392.16,455.19,114.85,2030.85
+Sudan,Africa,Monthly,67.61,74.53,18.8,331.92
