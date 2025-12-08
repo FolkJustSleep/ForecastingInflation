@@ -16,9 +16,10 @@ COUNTRIES_TO_COMPARE = ['Afghanistan', 'Haiti', 'Lebanon', 'Sudan', 'Myanmar']
 
 def load_data():
     """Load inflation and food price data"""
-    inflation_df = pd.read_csv('data/csv/inflation_pre.csv')
+    inflation_df = pd.read_csv('data/csv/clean_inflation.csv')
+    inflation_df_org = pd.read_csv('data/csv/inflation_pre.csv') 
     foodprice_df = pd.read_csv('data/csv/filtered_foodprice_mean.csv')
-    return inflation_df, foodprice_df
+    return inflation_df, inflation_df_org, foodprice_df
 
 def prepare_prophet_data(df, country):
     """Prepare data for Prophet model"""
@@ -41,7 +42,7 @@ def train_and_forecast(df, periods):
     forecast = model.predict(future)
     return model, forecast
 
-def plot_multi_country_comparison(inflation_df, countries, forecast_years):
+def plot_multi_country_comparison(inflation_df, inflation_df_org, countries, forecast_years):
     """Compare historical and forecasted inflation across countries"""
     fig, axes = plt.subplots(2, 1, figsize=(16, 12))
     
@@ -50,7 +51,7 @@ def plot_multi_country_comparison(inflation_df, countries, forecast_years):
     # Plot 1: Historical comparison
     ax1 = axes[0]
     for i, country in enumerate(countries):
-        df = prepare_prophet_data(inflation_df, country)
+        df = prepare_prophet_data(inflation_df_org, country)
         ax1.plot(df['ds'], df['y'], marker='o', linewidth=2, 
                 markersize=5, color=colors[i], label=country, alpha=0.8)
     
@@ -131,7 +132,7 @@ def main():
     print("="*70 + "\n")
     
     # Load data
-    inflation_df, foodprice_df = load_data()
+    inflation_df, inflation_df_org, foodprice_df = load_data()
     
     print(f"Analyzing {len(COUNTRIES_TO_COMPARE)} countries:")
     for country in COUNTRIES_TO_COMPARE:
@@ -141,7 +142,7 @@ def main():
     print("\nGenerating visualizations...")
     
     # Multi-country comparison
-    summary_df = plot_multi_country_comparison(inflation_df, COUNTRIES_TO_COMPARE, FORECAST_YEARS)
+    summary_df = plot_multi_country_comparison(inflation_df, inflation_df_org,  COUNTRIES_TO_COMPARE, FORECAST_YEARS)
     
     # Rankings
     plot_forecast_rankings(summary_df)
