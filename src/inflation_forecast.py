@@ -16,14 +16,15 @@ COUNTRY_TO_FORECAST = 'Afghanistan'  # Change this to forecast different countri
 
 def load_data():
     """Load inflation and food price data"""
-    inflation_df = pd.read_csv('data/csv/inflation_pre.csv')
+    inflation_df_plot = pd.read_csv('data/csv/inflation_pre.csv')
+    inflation_df = pd.read_csv('data/csv/clean_inflation.csv')
     foodprice_df = pd.read_csv('data/csv/filtered_foodprice_mean.csv')
     
     print(f"Loaded {len(inflation_df)} inflation records")
     print(f"Loaded {len(foodprice_df)} food price records")
     print(f"Common countries: {len(set(inflation_df['Country']) & set(foodprice_df['Country']))}")
     
-    return inflation_df, foodprice_df
+    return inflation_df, foodprice_df, inflation_df_plot
 
 def prepare_prophet_data(df, country):
     """Prepare data for Prophet model (requires 'ds' and 'y' columns)"""
@@ -121,7 +122,7 @@ def plot_historical_inflation(df, country):
     
     return plt
 
-def plot_forecast_results(model, forecast, df, country, forecast_years):
+def plot_forecast_results(model, forecast, inflation_df_plot, df, country, forecast_years):
     """Plot forecast results with components"""
     fig, axes = plt.subplots(2, 1, figsize=(14, 10))
     
@@ -137,7 +138,6 @@ def plot_forecast_results(model, forecast, df, country, forecast_years):
     ax1.plot(forecast_future['ds'], forecast_future['yhat'], 
              marker='s', linewidth=2, markersize=6, 
              color='#F77F00', label='Forecast', linestyle='--')
-    
     # Confidence interval
     ax1.fill_between(forecast_future['ds'], 
                       forecast_future['yhat_lower'], 
@@ -210,7 +210,9 @@ def main():
     print("="*60 + "\n")
     
     # Load data
-    inflation_df, foodprice_df = load_data()
+    inflation_df, foodprice_df, inflation_df_plot = load_data()
+    inflation_df_plot['ds'] = pd.to_datetime(inflation_df_plot['Year'], format='%Y')
+    inflation_df_plot['y'] = inflation_df_plot['Avg.Inflation'][inflation_df_plot['Country'] == COUNTRY_TO_FORECAST]
     
     # Prepare data for selected country
     print(f"\nForecasting for: {COUNTRY_TO_FORECAST}")
@@ -237,12 +239,12 @@ def main():
     print("Generating visualizations...")
     
     # Plot 1: Historical inflation
-    plot_historical_inflation(df_final, COUNTRY_TO_FORECAST)
+    plot_historical_inflation(inflation_df_plot, COUNTRY_TO_FORECAST)
     plt.savefig('inflation_historical.png', dpi=300, bbox_inches='tight')
     print("  Saved: inflation_historical.png")
     
     # Plot 2: Forecast results
-    plot_forecast_results(model, forecast, df_final, COUNTRY_TO_FORECAST, FORECAST_YEARS)
+    plot_forecast_results(model, forecast, inflation_df_plot, df_final, COUNTRY_TO_FORECAST, FORECAST_YEARS)
     plt.savefig('inflation_forecast.png', dpi=300, bbox_inches='tight')
     print("  Saved: inflation_forecast.png")
     
