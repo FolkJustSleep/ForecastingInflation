@@ -8,11 +8,16 @@ import numpy as np
 from prophet import Prophet
 import matplotlib.pyplot as plt
 import warnings
+import pickle
 warnings.filterwarnings('ignore')
 
 # Configuration
+f = open('data/pickle/common_years_and_countries.pickle', 'rb')
+common_data = pickle.load(f)
+f.close()
 FORECAST_YEARS = 3
-COUNTRIES_TO_COMPARE = ['Afghanistan', 'Haiti', 'Lebanon', 'Sudan', 'Myanmar']
+COUNTRIES_TO_COMPARE = np.asarray(common_data['Country'])
+COUNTRIES_TO_COMPARE = np.delete(COUNTRIES_TO_COMPARE, np.where(COUNTRIES_TO_COMPARE == 'Somalia'))
 
 def load_data():
     """Load inflation and food price data"""
@@ -46,7 +51,7 @@ def plot_multi_country_comparison(inflation_df, inflation_df_org, countries, for
     """Compare historical and forecasted inflation across countries"""
     fig, axes = plt.subplots(2, 1, figsize=(16, 12))
     
-    colors = ['#2E86AB', '#A23B72', '#F77F00', '#06A77D', '#D62828']
+    colors = ['#2E86AB', '#A23B72', '#F77F00', '#06A77D', '#D62828', '#6A4C93', '#FF6F61', '#1982C4', '#8AC926', '#FFCA3A', '#6A4C93', '#FF595E', '#1982C4', '#FF6F61', '#8AC926', '#1982C4', '#FFCA3A', '#6A4C93']
     
     # Plot 1: Historical comparison
     ax1 = axes[0]
