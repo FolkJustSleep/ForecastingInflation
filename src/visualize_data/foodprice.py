@@ -17,6 +17,6 @@ for i in range(len(country_list)):
 plt.legend()
 plt.xlabel('Year')
 plt.ylabel('Average Food Price') 
-plt.title('Average Food Price of Afghanistan Over Years')
+plt.title('Average Food Price Over Years')
 plt.tight_layout()
 plt.savefig('results/average_food_price_over_years.png', dpi=300, bbox_inches='tight')

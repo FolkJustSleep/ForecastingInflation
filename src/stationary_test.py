@@ -47,7 +47,7 @@ def stationary_data(train_df, test_df):
     plt.legend(); plt.xticks(rotation=45); 
     plt.title('log1p transform (train)')
     plt.tight_layout();
-    plt.savefig('log1p_transform_train.png', dpi=300, bbox_inches='tight')
+    plt.savefig('results/log1p_transform_train.png', dpi=300, bbox_inches='tight')
     return train_df_log, test_df_log
 
 if __name__ == "__main__":

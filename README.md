@@ -29,5 +29,10 @@
 
 4. Run to test (Start forecasting)
     ```
-    python src/forecasting/inflation_forecast.py
+    python src/forecaating.py
+    ```
+
+5. Run to test multiple country forecasting
+    ```
+    python src/multiple_country_forecast
     ```

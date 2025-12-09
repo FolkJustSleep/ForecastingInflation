@@ -9,7 +9,7 @@ from prophet import Prophet
 import matplotlib.pyplot as plt
 import warnings
 import preparedata_to_forcast as prep
-import train_forecast_model as trainmodel
+import forecasting as trainmodel
 import stationary_test as statest
 warnings.filterwarnings('ignore')
 
