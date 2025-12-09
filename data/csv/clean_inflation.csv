@@ -1,0 +1,239 @@
+Year,Country,Avg.Inflation
+2007,Afghanistan,8.68
+2008,Afghanistan,26.42
+2009,Afghanistan,-6.81
+2010,Afghanistan,2.18
+2011,Afghanistan,11.8
+2012,Afghanistan,6.44
+2013,Afghanistan,7.39
+2014,Afghanistan,4.67
+2015,Afghanistan,-0.66
+2016,Afghanistan,4.38
+2017,Afghanistan,4.98
+2018,Afghanistan,0.63
+2019,Afghanistan,2.3
+2020,Afghanistan,5.44
+2007,Burkina Faso,-0.2
+2008,Burkina Faso,10.7
+2009,Burkina Faso,0.9
+2010,Burkina Faso,-0.6
+2011,Burkina Faso,2.8
+2012,Burkina Faso,3.8
+2013,Burkina Faso,0.5
+2014,Burkina Faso,-0.3
+2015,Burkina Faso,1.7
+2016,Burkina Faso,0.4
+2017,Burkina Faso,1.5
+2018,Burkina Faso,2.0
+2019,Burkina Faso,-3.2
+2020,Burkina Faso,1.9
+2007,Burundi,8.4
+2008,Burundi,24.4
+2009,Burundi,10.6
+2010,Burundi,6.5
+2011,Burundi,9.6
+2012,Burundi,18.2
+2013,Burundi,7.9
+2014,Burundi,4.4
+2015,Burundi,5.6
+2016,Burundi,5.5
+2017,Burundi,16.6
+2018,Burundi,-2.8
+2019,Burundi,-0.7
+2020,Burundi,7.3
+2007,Cameroon,1.1
+2008,Cameroon,5.3
+2009,Cameroon,3.0
+2010,Cameroon,1.3
+2011,Cameroon,3.0
+2012,Cameroon,2.4
+2013,Cameroon,2.1
+2014,Cameroon,1.9
+2015,Cameroon,2.7
+2016,Cameroon,0.9
+2017,Cameroon,0.6
+2018,Cameroon,1.1
+2019,Cameroon,2.5
+2020,Cameroon,2.5
+2007,Central African Republic,0.9
+2008,Central African Republic,9.2
+2009,Central African Republic,3.6
+2010,Central African Republic,1.5
+2011,Central African Republic,1.2
+2012,Central African Republic,5.9
+2013,Central African Republic,4.0
+2014,Central African Republic,17.8
+2015,Central African Republic,1.4
+2016,Central African Republic,4.9
+2017,Central African Republic,4.2
+2018,Central African Republic,1.6
+2019,Central African Republic,2.8
+2020,Central African Republic,0.9
+2007,Chad,-7.4
+2008,Chad,8.3
+2009,Chad,10.1
+2010,Chad,-2.1
+2011,Chad,2.0
+2012,Chad,7.5
+2013,Chad,0.2
+2014,Chad,1.7
+2015,Chad,4.8
+2016,Chad,-1.6
+2017,Chad,-0.9
+2018,Chad,4.0
+2019,Chad,-1.0
+2020,Chad,4.5
+2007,Guinea-Bissau,4.6
+2008,Guinea-Bissau,10.4
+2009,Guinea-Bissau,-1.6
+2010,Guinea-Bissau,1.1
+2011,Guinea-Bissau,5.1
+2012,Guinea-Bissau,2.1
+2013,Guinea-Bissau,0.8
+2014,Guinea-Bissau,-1.0
+2015,Guinea-Bissau,1.5
+2016,Guinea-Bissau,2.7
+2017,Guinea-Bissau,-0.2
+2018,Guinea-Bissau,0.4
+2019,Guinea-Bissau,0.3
+2020,Guinea-Bissau,1.5
+2007,Haiti,6.9
+2008,Haiti,12.5
+2009,Haiti,5.6
+2010,Haiti,2.9
+2011,Haiti,5.2
+2012,Haiti,5.7
+2013,Haiti,5.3
+2014,Haiti,3.2
+2015,Haiti,5.3
+2016,Haiti,11.4
+2017,Haiti,10.6
+2018,Haiti,11.4
+2019,Haiti,17.3
+2020,Haiti,22.9
+2007,Iraq,30.8
+2008,Iraq,2.7
+2009,Iraq,-2.2
+2010,Iraq,2.4
+2011,Iraq,5.6
+2012,Iraq,6.1
+2013,Iraq,1.9
+2014,Iraq,2.2
+2015,Iraq,1.4
+2016,Iraq,0.5
+2017,Iraq,0.2
+2018,Iraq,0.4
+2019,Iraq,-0.2
+2020,Iraq,0.6
+2007,Lebanon,4.1
+2008,Lebanon,10.7
+2009,Lebanon,1.2
+2010,Lebanon,4.0
+2011,Lebanon,5.0
+2012,Lebanon,6.6
+2013,Lebanon,5.6
+2014,Lebanon,1.1
+2015,Lebanon,-3.8
+2016,Lebanon,-0.8
+2017,Lebanon,4.5
+2018,Lebanon,6.1
+2019,Lebanon,2.9
+2020,Lebanon,84.9
+2007,Liberia,11.4
+2008,Liberia,17.5
+2009,Liberia,7.4
+2010,Liberia,7.3
+2011,Liberia,8.5
+2012,Liberia,6.8
+2013,Liberia,7.6
+2014,Liberia,9.9
+2015,Liberia,7.7
+2016,Liberia,8.8
+2017,Liberia,12.4
+2018,Liberia,23.5
+2019,Liberia,27.0
+2020,Liberia,17.0
+2007,Mali,1.4
+2008,Mali,9.2
+2009,Mali,2.4
+2010,Mali,1.2
+2011,Mali,3.0
+2012,Mali,5.3
+2013,Mali,-0.6
+2014,Mali,0.9
+2015,Mali,1.4
+2016,Mali,-1.8
+2017,Mali,2.4
+2018,Mali,1.9
+2019,Mali,-3.0
+2020,Mali,0.5
+2007,Mozambique,10.4
+2008,Mozambique,14.5
+2009,Mozambique,3.8
+2010,Mozambique,12.4
+2011,Mozambique,11.2
+2012,Mozambique,2.6
+2013,Mozambique,4.3
+2014,Mozambique,2.6
+2015,Mozambique,3.6
+2016,Mozambique,17.4
+2017,Mozambique,15.1
+2018,Mozambique,3.9
+2019,Mozambique,2.8
+2020,Mozambique,3.1
+2007,Myanmar,34.4
+2008,Myanmar,20.9
+2009,Myanmar,3.7
+2010,Myanmar,5.9
+2011,Myanmar,6.8
+2012,Myanmar,0.4
+2013,Myanmar,6.4
+2014,Myanmar,5.7
+2015,Myanmar,7.3
+2016,Myanmar,9.1
+2017,Myanmar,4.6
+2018,Myanmar,5.9
+2019,Myanmar,8.6
+2020,Myanmar,5.7
+2007,Niger,0.1
+2008,Niger,11.3
+2009,Niger,0.5
+2010,Niger,0.9
+2011,Niger,2.9
+2012,Niger,0.5
+2013,Niger,2.3
+2014,Niger,-0.9
+2015,Niger,1.0
+2016,Niger,0.2
+2017,Niger,0.2
+2018,Niger,2.8
+2019,Niger,-2.5
+2020,Niger,2.9
+2007,Nigeria,5.4
+2008,Nigeria,11.6
+2009,Nigeria,12.5
+2010,Nigeria,13.7
+2011,Nigeria,10.8
+2012,Nigeria,12.2
+2013,Nigeria,8.5
+2014,Nigeria,8.0
+2015,Nigeria,9.0
+2016,Nigeria,15.7
+2017,Nigeria,16.5
+2018,Nigeria,12.1
+2019,Nigeria,11.4
+2020,Nigeria,13.2
+2007,Sudan,14.8
+2008,Sudan,14.3
+2009,Sudan,11.3
+2010,Sudan,13.0
+2011,Sudan,18.1
+2012,Sudan,35.6
+2013,Sudan,36.5
+2014,Sudan,36.9
+2015,Sudan,16.9
+2016,Sudan,17.8
+2017,Sudan,32.4
+2018,Sudan,63.3
+2019,Sudan,51.0
+2020,Sudan,163.3
