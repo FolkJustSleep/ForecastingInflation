@@ -208,3 +208,7 @@ __marimo__/
 .venv
 
 *.png
+*.pkl
+data/pickle/*.pkl
+results
+data/model

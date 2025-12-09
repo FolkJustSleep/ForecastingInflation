@@ -7,8 +7,8 @@ def load_data():
     foodprice_df = pd.read_csv('data/csv/filtered_foodprice_mean_1.csv') 
     return df_Inflation, foodprice_df
 
-def prepare_prophet_data(df):
-    data = df
+def prepare_prophet_data(df, country):
+    data = df[df['Country'] == country].copy()
     data['ds'] = pd.to_datetime(data['Year'], format='%Y')
     if 'Avg.Inflation' not in data.columns:
         data['y'] = data['avg_food_price'] = (df['Open_price'] + df['Close_price']) / 2
@@ -17,14 +17,14 @@ def prepare_prophet_data(df):
     prophet_df = data[['ds', 'y']].sort_values('ds').reset_index(drop=True)
     return prophet_df
 
-def add_food_price_regressor(inflation_df, foodprice_df):
+def add_food_price_regressor(inflation_df, foodprice_df, country):
     """Add food price as external regressor to improve forecast accuracy"""
     # Get food price data for the country
-    food_data = foodprice_df.copy()
+    food_data = foodprice_df[foodprice_df['Country'] == country].copy()
     food_data['ds'] = pd.to_datetime(food_data['Year'], format='%Y')
     
     # Merge with inflation data
-    inflation_data = inflation_df.copy()
+    inflation_data = inflation_df[inflation_df['Country'] == country].copy()
     inflation_data['ds'] = pd.to_datetime(inflation_data['Year'], format='%Y')
     inflation_data['y'] = inflation_data['Avg.Inflation']
     
