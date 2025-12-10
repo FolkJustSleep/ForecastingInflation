@@ -207,7 +207,6 @@ marimo/_lsp/
 __marimo__/
 .venv
 
-*.png
 *.pkl
 data/pickle/*.pkl
 data/model
