@@ -98,5 +98,5 @@ if __name__ == "__main__":
     plt.legend()
     plt.xticks(rotation=45)
     plt.tight_layout()
-    plt.savefig('results/forecast_vs_actuals.png', dpi=300, bbox_inches='tight')
+    plt.savefig('results/figure/forecast_vs_actuals.png', dpi=300, bbox_inches='tight')
     print("Forecast vs Actuals plot saved to results/forecast_vs_actuals.png")

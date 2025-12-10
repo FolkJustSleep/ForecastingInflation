@@ -3,8 +3,8 @@ import pandas as pd
 from statsmodels.tsa.stattools import adfuller # For ADF test
 
 def load_data():
-    df_Inflation = pd.read_csv('data/csv/inflation_pre.csv')
-    foodprice_df = pd.read_csv('data/csv/filtered_foodprice_mean_1.csv') 
+    df_Inflation = pd.read_csv('data/csv/processed/inflation_pre.csv')
+    foodprice_df = pd.read_csv('data/csv/processed/filtered_foodprice_mean_1.csv') 
     return df_Inflation, foodprice_df
 
 def prepare_prophet_data(df, country):
@@ -38,7 +38,7 @@ def add_food_price_regressor(inflation_df, foodprice_df, country):
     merged_df['avg_food_price'].ffill(inplace=True)
     merged_df['avg_food_price'].bfill(inplace=True)
     
-    merged_df.to_csv('data/csv/inflation_with_foodprice_regressor.csv', index=False)
+    merged_df.to_csv('data/csv/processed/inflation_with_foodprice_regressor.csv', index=False)
     
     return merged_df
 

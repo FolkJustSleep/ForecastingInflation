@@ -19,8 +19,8 @@ COUNTRIES_TO_COMPARE = []
 
 def load_data():
     """Load inflation and food price data"""
-    inflation_df = pd.read_csv('data/csv/inflation_pre.csv')
-    foodprice_df = pd.read_csv('data/csv/filtered_foodprice_mean_1.csv')
+    inflation_df = pd.read_csv('data/csv/processed/inflation_pre.csv')
+    foodprice_df = pd.read_csv('data/csv/processed/filtered_foodprice_mean_1.csv')
     return inflation_df, foodprice_df
 
 
@@ -76,6 +76,7 @@ def plot_multi_country_comparison(inflation_df, foodprice_df, countries, forecas
         # made the data stationary
         train_df_log, test_df_log = statest.stationary_data(train_df, test_df)
         model, forecast = train_and_forecast(train_df_log, test_df_log, forecast_years)
+        forecast.to_csv(f'results/output/forecast_{country}.csv', index=False)
         pickle.dump(model, open(f'data/model/prophet_model_{country}_forecasting.pkl', 'wb'))
         # Plot historical
         ax2.plot(df['ds'], df['y'], linewidth=1.5, alpha=0.5)
@@ -96,8 +97,8 @@ def plot_multi_country_comparison(inflation_df, foodprice_df, countries, forecas
         plt.legend()
         plt.xticks(rotation=45)
         plt.tight_layout()
-        plt.savefig(f'results/forecast_vs_actuals_{country}.png', dpi=300, bbox_inches='tight')
-        print(f"Forecast vs Actuals plot saved to results/forecast_vs_actuals_{country}.png")
+        # plt.savefig(f'results/figure/forecast_vs_actuals_{country}.png', dpi=300, bbox_inches='tight')
+        print(f"Forecast vs Actuals plot saved to results/figure/forecast_vs_actuals_{country}.png")
         
         # Store forecast summary
         avg_forecast = forecast_future['yhat'].mean()
@@ -108,8 +109,8 @@ def plot_multi_country_comparison(inflation_df, foodprice_df, countries, forecas
         })
     
     
-    fig.savefig('results/multi_country_comparison.png', dpi=300, bbox_inches='tight')
-    print("  Saved: results/multi_country_comparison.png")
+    # fig.savefig('results/figure/multi_country_comparison.png', dpi=300, bbox_inches='tight')
+    print("  Saved: results/figure/multi_country_comparison.png")
     
     return pd.DataFrame(forecast_summary)
 
@@ -134,8 +135,8 @@ def plot_forecast_rankings(summary_df):
                 va='center', fontsize=10)
     
     plt.tight_layout()
-    plt.savefig('results/forecast_rankings.png', dpi=300, bbox_inches='tight')
-    print("  Saved: results/forecast_rankings.png")
+    plt.savefig('results/figure/forecast_rankings.png', dpi=300, bbox_inches='tight')
+    print("  Saved: results/figure/forecast_rankings.png")
 
 def main():
     """Main execution function"""
@@ -157,6 +158,7 @@ def main():
     
     # Multi-country comparison
     summary_df = plot_multi_country_comparison(inflation_df, foodprice_df, COUNTRIES_TO_COMPARE, FORECAST_YEARS)
+    summary_df.to_csv('results/output/forecast_summary.csv', index=False)
     # Rankings
     plot_forecast_rankings(summary_df)
 
