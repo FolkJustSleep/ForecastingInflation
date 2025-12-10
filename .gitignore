@@ -210,5 +210,4 @@ __marimo__/
 *.png
 *.pkl
 data/pickle/*.pkl
-results
 data/model
